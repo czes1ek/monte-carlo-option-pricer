@@ -29,10 +29,7 @@ g++ -std=c++17 -O2 mc.cpp -o mc
 
 ./mc --convergence    # prints a CSV convergence table
 
-`--convergence` prints, for 1e3, 1e4, 1e5 and 1e6 paths (seed 12345, S0=100,
-K=100, r=0.05, sigma=0.2, T=1), the Monte Carlo price, its standard error, the
-Black-Scholes price and the absolute error, with and without antithetic
-variates. All rows share the seed, so each run extends the previous one's draws.
+`--convergence` prints price, standard error and error vs Black-Scholes at 1e3-1e6 paths, plain and antithetic, seed 12345 (numbers here are from Apple clang/libc++ on macOS; other standard libraries draw different normals).
 
 ## Background
 
