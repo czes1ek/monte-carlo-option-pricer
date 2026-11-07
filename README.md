@@ -25,6 +25,15 @@ g++ -std=c++17 -O2 mc.cpp -o mc
 
 ./mc
 
+./mc --test           # runs the tests; exits non-zero on failure
+
+./mc --convergence    # prints a CSV convergence table
+
+`--convergence` prints, for 1e3, 1e4, 1e5 and 1e6 paths (seed 12345, S0=100,
+K=100, r=0.05, sigma=0.2, T=1), the Monte Carlo price, its standard error, the
+Black-Scholes price and the absolute error, with and without antithetic
+variates. All rows share the seed, so each run extends the previous one's draws.
+
 ## Background
 
 A European call gives the right to buy an asset at a fixed strike price K at
